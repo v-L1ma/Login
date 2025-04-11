@@ -1,10 +1,10 @@
 <main>
     <section class="form-section">
-        <img src="../../../assets/svg/Component1"/>
+        <img src="/svg/logo.svg"/>
         <h2>{{title}}</h2>
         <div class="btn-wapper">
             <ng-content></ng-content>
-            <button class="primary">{{primaryBtnText}}</button>
+            <button class="primary" (click)="submit()">{{primaryBtnText}}</button>
             <div class="divider">
                 <div></div>
                 <span>or</span>
@@ -16,6 +16,6 @@
     </section>
     <section class="banner-section">
         <h1>You Should, MoveIt!</h1>
-        <img/>
+        <img src="/svg/main-illustratation.svg"/>
     </section>
 </main>

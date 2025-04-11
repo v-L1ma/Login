@@ -18,11 +18,31 @@ type InputTypes = "text" | "email" | "password"
 })
 export class PrimaryInputComponent implements ControlValueAccessor {
   @Input() type: InputTypes = "text";
-  @Input() formName: string = "";
   @Input() placeHolder: string = "";
   @Input() label: string = "";
+  @Input() inputName:string = "";
 
   value: string = ""
   onChange: any = () => {}
+  onThouched: any = () => {}
+
+  onInput(event: Event){
+    const value = (event.target as HTMLInputElement).value
+    this.onChange(value)
+  }
+
+  writeValue(value: any): void {
+    this.value = value
+  }
+  
+  registerOnChange(fn: any): void {
+    this.onChange = fn
+  }
+
+  registerOnTouched(fn: any): void {
+    this.onThouched = fn;
+  }
+
+  setDisabledState(isDisabled: boolean): void {}
 
 }
